@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:">
+        <!-- <meta http-equiv="Content-Security-Policy" content="default-src *; img-src * 'self' data: https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' *;style-src 'self' 'unsafe-inline' *"> -->
+        <link href="../../../assets/vendor/bootstrap/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../assets/css/style.css" rel="stylesheet">
+        <title>Random Password</title>
+    </head>
+    <body>
+        <div class="container mt-5">
+            <div class="row">
+                <!-- <div class="card offset-md-3 col-md-6 col-12 pt-3"> -->
+                <div class="card col-12 pt-3">
+                    <h5 class="card-title text-center">Random Password</h5>
+                    <div class="card-body">
+                        <div class="input-group">
+                            <input type="text" id="password" name="password" placeholder="password" class="form-control form-control-lg" readonly>
+                            <button type="button" id="generate" class="btn btn-primary">Generar</button>
+                        </div>
+                        <div class="mt-5 row">
+                            <div class="col-md-9">
+                                <label class="form-label" for="length">Longitud</label>
+                                <div class="d-flex align-items-center">
+                                    <input type="number" id="length" name="length" class="form-control" min="0" max="50" value="11" style="width: 75px;">
+                                    <input type="range" id="range" class="form-range ms-3" min="0" max="50" step="1" value="11" style="width: 220px;">
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-check">
+                                    <input type="checkbox" id="mayus" name="mayus" class="form-check-input" checked>
+                                    <label class="form-check-label" for="mayus">Mayúsculas</label>
+                                </div>
+                                <div class="form-check">
+                                    <input type="checkbox" id="minus" name="minus" class="form-check-input" checked>
+                                    <label class="form-check-label" for="minus">Minúsculas</label>
+                                </div>
+                                <div class="form-check">
+                                    <input type="checkbox" id="numbers" name="numbers" class="form-check-input" checked>
+                                    <label class="form-check-label" for="numbers">Números</label>
+                                </div>
+                                <div class="form-check">
+                                    <input type="checkbox" id="symbols" name="symbols" class="form-check-input" checked>
+                                    <label class="form-check-label" for="symbols">Símbolos</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-5 text-center">
+                            <button type="button" id="copy" class="btn btn-light">Copiar contraseña</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="position-relative">
+            <div class="toast-container top-0 end-0 p-3" id="toastCopied">
+                <div class="toast align-items-center text-bg-success border-0">
+                    <div class="d-flex">
+                        <div class="toast-body">
+                            Contraseña copiada correctamente!
+                        </div>
+                        <button type="button" class="btn-close me-2 m-auto"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="../../../src/Controller/MainController.js"></script>
+    </body>
+</html>

@@ -1,0 +1,36 @@
+{
+  "name": "random-password",
+  "version": "1.0.0",
+  "description": "Random password generator",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder",
+    "pack:osx": "electron-packager . --asar --no-prune --out=dist/osx --platform=darwin --arch=x64 --app-version=1.0 --icon=assets/img/icon.icns",
+    "pack:win32": "electron-packager . --asar --no-prune --out=dist/windows --platform=win32 --arch=ia32 --app-version=1.0 --icon=assets/img/icon.ico",
+    "pack:win64": "electron-packager . --asar --no-prune --out=dist/windows --platform=win32 --arch=x64 --app-version=1.0 --icon=assets/img/icon.ico"
+  },
+  "author": "Enigmo",
+  "license": "ISC",
+  "devDependencies": {
+    "@electron-forge/cli": "^6.0.0-beta.70",
+    "electron": "^21.2.0",
+    "electron-packager": "^17.1.0",
+    "electron-builder": "^20.38.5",
+    "electron-reload": "^1.5.0"
+  },
+  "build": {
+    "productName": "Random Password",
+    "appId": "enigmo.RandomPassword",
+    "mac": {
+      "icon": "assets/img/icon.icns"
+    },
+    "win": {
+      "target": "portable",
+      "icon": "assets/img/icon.ico"
+    },
+    "portable": {
+      "artifactName": "randompassword_portable.exe"
+    }
+  }
+}
