@@ -1,5 +1,5 @@
 {
-  "name": "random-password",
+  "name": "RandomPassword",
   "version": "1.0.0",
   "description": "Random password generator",
   "main": "index.js",
