@@ -12,13 +12,12 @@
     <body>
         <div class="container mt-5">
             <div class="row">
-                <!-- <div class="card offset-md-3 col-md-6 col-12 pt-3"> -->
-                <div class="card col-12 pt-3">
-                    <h5 class="card-title text-center">Random Password</h5>
+                <div class="card col-12 pt-3 border-0">
+                    <h5 class="card-title text-center">Generar contraseña</h5>
                     <div class="card-body">
                         <div class="input-group">
                             <input type="text" id="password" name="password" placeholder="password" class="form-control form-control-lg" readonly>
-                            <button type="button" id="generate" class="btn btn-primary">Generar</button>
+                            <button type="button" id="generate" class="btn btn-outline-secondary">Generar</button>
                         </div>
                         <div class="mt-5 row">
                             <div class="col-md-9">
@@ -29,26 +28,26 @@
                                 </div>
                             </div>
                             <div class="col-md-3">
-                                <div class="form-check">
+                                <div class="form-check form-switch">
                                     <input type="checkbox" id="mayus" name="mayus" class="form-check-input" checked>
                                     <label class="form-check-label" for="mayus">Mayúsculas</label>
                                 </div>
-                                <div class="form-check">
+                                <div class="form-check form-switch">
                                     <input type="checkbox" id="minus" name="minus" class="form-check-input" checked>
                                     <label class="form-check-label" for="minus">Minúsculas</label>
                                 </div>
-                                <div class="form-check">
+                                <div class="form-check form-switch">
                                     <input type="checkbox" id="numbers" name="numbers" class="form-check-input" checked>
                                     <label class="form-check-label" for="numbers">Números</label>
                                 </div>
-                                <div class="form-check">
+                                <div class="form-check form-switch">
                                     <input type="checkbox" id="symbols" name="symbols" class="form-check-input" checked>
                                     <label class="form-check-label" for="symbols">Símbolos</label>
                                 </div>
                             </div>
                         </div>
                         <div class="mt-5 text-center">
-                            <button type="button" id="copy" class="btn btn-light">Copiar contraseña</button>
+                            <button type="button" id="copy" class="btn btn-secondary">Copiar contraseña</button>
                         </div>
                     </div>
                 </div>

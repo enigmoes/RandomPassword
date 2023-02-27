@@ -1,46 +1,39 @@
 // Modules to control application life and create native browser window
-const { app, BrowserWindow, Menu } = require("electron");
+const { app, BrowserWindow, Menu, MenuItem, nativeTheme } = require("electron");
 const url = require("url");
 const path = require("path");
 
+// Ventana principal
+let mainWindow = {};
+
+// Main Menu Templates
+const templateMenu = [];
+
 if (!app.isPackaged) {
 	require("electron-reload")(__dirname, {
-		electron: path.join(__dirname, "../node_modules", ".bin", "electron")
+		electron: path.join(__dirname, "node_modules", ".bin", "electron")
+	});
+	// Developer Tools in Development Environment
+	templateMenu.push({
+		label: "DevTools",
+		submenu: [
+			{
+				label: "Show/Hide Dev Tools",
+				accelerator:
+					process.platform == "darwin" ? "Comand+D" : "Ctrl+D",
+				click(item, focusedWindow) {
+					focusedWindow.toggleDevTools();
+				}
+			},
+			{
+				role: "reload"
+			}
+		]
 	});
 }
 
-let mainWindow = {};
-
-// Menu Template
-const templateMenu = [
-	{
-		label: "File",
-		submenu: [
-			{
-				label: "Exit",
-				accelerator: process.platform == "darwin" ? "command+Q" : "Ctrl+Q",
-				click() {
-					app.quit();
-				}
-			}
-		]
-	},
-	{
-		label: 'View',
-		submenu: [
-			{
-				label: 'Reload',
-				accelerator: process.platform == "darwin" ? "command+R" : "Ctrl+R",
-				click() {
-					mainWindow.reload()
-				}
-			}
-		]
-	}
-];
-
 function createWindow() {
-    // The Main Window
+	// The Main Window
 	mainWindow = new BrowserWindow({
 		// width: 1200,
 		width: 800,
@@ -63,6 +56,24 @@ function createWindow() {
 	const mainMenu = Menu.buildFromTemplate(templateMenu);
 	// Set The Menu to the Main Window
 	Menu.setApplicationMenu(mainMenu);
+
+	// ContextMenu
+	const ctxMenu = new Menu();
+	ctxMenu.append(new MenuItem({
+		label: 'Copiar',
+		role: 'copy',
+		icon: path.join(__dirname, "assets/img/copy_16.png"),
+		click: () => {
+			console.log('Copiado!')
+		}
+	}));
+	// Set ContextMenu
+	mainWindow.webContents.on('context-menu',(e, params) => {
+		ctxMenu.popup(mainWindow, params.x, params.y)
+	});
+
+	// Set native theme light
+	nativeTheme.themeSource = 'light';
 }
 
 // This method will be called when Electron has finished
@@ -91,25 +102,5 @@ app.on("window-all-closed", function () {
 if (process.platform === "darwin") {
 	templateMenu.unshift({
 		label: app.getName()
-	});
-}
-
-// Developer Tools in Development Environment
-if (!app.isPackaged) {
-	templateMenu.push({
-		label: "DevTools",
-		submenu: [
-			{
-				label: "Show/Hide Dev Tools",
-				accelerator:
-					process.platform == "darwin" ? "Comand+D" : "Ctrl+D",
-				click(item, focusedWindow) {
-					focusedWindow.toggleDevTools();
-				}
-			},
-			{
-				role: "reload"
-			}
-		]
 	});
 }

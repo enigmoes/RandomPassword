@@ -1,4 +1,23 @@
 /* styles.css */
-.form-control:focus {
+.form-control:focus,
+.form-check-input:focus {
+    border-color: #6c757d;
     box-shadow: none;
+}
+
+.form-check-input:checked {
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+
+.form-range::-webkit-slider-thumb {
+    background-color:#6c757d;
+}
+.form-range::-webkit-slider-thumb:active {
+    background-color:#6c757d;
+    box-shadow: none;
+}
+
+.btn-outline-secondary {
+    color: #000000;
 }
