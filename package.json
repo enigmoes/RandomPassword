@@ -14,9 +14,9 @@
   "license": "ISC",
   "devDependencies": {
     "@electron-forge/cli": "^6.0.0-beta.70",
-    "electron": "^21.2.0",
+    "electron": "^23.1.1",
+    "electron-builder": "^22.10.3",
     "electron-packager": "^17.1.0",
-    "electron-builder": "^20.38.5",
     "electron-reload": "^1.5.0"
   },
   "build": {
