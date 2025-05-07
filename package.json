@@ -16,10 +16,9 @@
   "license": "ISC",
   "devDependencies": {
     "@electron-forge/cli": "^6.0.0-beta.70",
-    "electron": "^23.1.1",
-    "electron-builder": "^22.10.3",
-    "electron-packager": "^17.1.0",
-    "electron-reload": "^1.5.0"
+    "electron": "^36.1.0",
+    "electron-builder": "^26.0.12",
+    "electron-packager": "^17.1.0"
   },
   "build": {
     "productName": "RandomPassword",
