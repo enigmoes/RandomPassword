@@ -2,7 +2,7 @@
   "name": "randompassword",
   "productName": "RandomPassword",
   "version": "1.0.0",
-  "description": "Genere contraseñas seguras",
+  "description": "Create random password on your local machine fast, secure and easy",
   "main": "index.js",
   "scripts": {
     "start": "electron .",
