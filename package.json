@@ -1,5 +1,6 @@
 {
   "name": "randompassword",
+  "productName": "RandomPassword",
   "version": "1.0.0",
   "description": "Random password generator",
   "main": "index.js",
@@ -8,7 +9,8 @@
     "dist": "electron-builder",
     "pack:osx": "electron-packager . --asar --no-prune --out=dist/osx --platform=darwin --arch=x64 --app-version=1.0 --icon=assets/img/icon.icns",
     "pack:win32": "electron-packager . --asar --no-prune --out=dist/windows --platform=win32 --arch=ia32 --app-version=1.0 --icon=assets/img/icon.ico",
-    "pack:win64": "electron-packager . --asar --no-prune --out=dist/windows --platform=win32 --arch=x64 --app-version=1.0 --icon=assets/img/icon.ico"
+    "pack:win64": "electron-packager . --asar --no-prune --out=dist/windows --platform=win32 --arch=x64 --app-version=1.0 --icon=assets/img/icon.ico",
+    "build:portable": "electron-builder build --win portable"
   },
   "author": "Enigmo",
   "license": "ISC",
@@ -20,7 +22,7 @@
     "electron-reload": "^1.5.0"
   },
   "build": {
-    "productName": "Random Password",
+    "productName": "RandomPassword",
     "appId": "enigmo.RandomPassword",
     "mac": {
       "icon": "assets/img/icon.icns"
@@ -30,7 +32,7 @@
       "icon": "assets/img/icon.ico"
     },
     "portable": {
-      "artifactName": "randompassword_portable.exe"
+      "artifactName": "RandomPassword.exe"
     }
   }
 }
