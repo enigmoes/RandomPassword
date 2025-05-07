@@ -2,7 +2,7 @@
   "name": "randompassword",
   "productName": "RandomPassword",
   "version": "1.0.0",
-  "description": "Random password generator",
+  "description": "Genere contraseñas seguras",
   "main": "index.js",
   "scripts": {
     "start": "electron .",
