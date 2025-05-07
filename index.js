@@ -10,9 +10,6 @@ let mainWindow = {};
 const templateMenu = [];
 
 if (!app.isPackaged) {
-	require("electron-reload")(__dirname, {
-		electron: path.join(__dirname, "node_modules", ".bin", "electron")
-	});
 	// Developer Tools in Development Environment
 	templateMenu.push({
 		label: "DevTools",
@@ -71,9 +68,6 @@ function createWindow() {
 	mainWindow.webContents.on('context-menu',(e, params) => {
 		ctxMenu.popup(mainWindow, params.x, params.y)
 	});
-
-	// Set native theme light
-	nativeTheme.themeSource = 'light';
 }
 
 // This method will be called when Electron has finished
